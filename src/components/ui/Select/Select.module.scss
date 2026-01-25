@@ -1,0 +1,141 @@
+.selectWrapper {
+  position: relative;
+  flex: 0 0 240px;
+  font-size: 14px;
+
+  @media (max-width: 1280px) {
+    flex: 0 0 160px;
+  }
+
+  @media (max-width: 768px) {
+    flex: 1 0 calc(50% - 8px);
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .nativeSelect {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+  }
+
+  .selectTrigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 16px;
+    background-color: var(--color-bg);
+    border: 1px solid hsl(from var(--color-primary) h s l / 0.2);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+
+    @media (max-width: 768px) {
+      padding: 7px 8px;
+      font-size: 14px;
+    }
+
+    &:hover:not(.disabled) {
+      border-color: var(--color-primary);
+    }
+
+    &:focus-visible {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px hsl(from var(--color-primary) h s l / 0.2);
+    }
+
+    .disabled & {
+      cursor: default;
+    }
+
+    .selectValue {
+      flex: 1;
+      color: var(--color-text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      @media (max-width: 768px) {
+        font-size: 12px;
+      }
+    }
+
+    .selectArrow {
+      margin-left: 8px;
+      color: var(--color-text);
+      transition: transform 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+
+      &.selectArrowOpen {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .selectDropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background-color: var(--color-bg);
+    border: 1px solid hsl(from var(--color-border) h s l / 0.2);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-height: 250px;
+    overflow-y: auto;
+    z-index: 1000;
+    animation: slideDown 0.2s ease;
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .selectOption {
+      padding: 10px 16px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      color: var(--color-text);
+
+      @media (max-width: 768px) {
+        padding: 8px 8px;
+        font-size: 12px;
+      }
+
+      &:hover {
+        background-color: hsl(from var(--color-primary) h s l / 0.1);
+      }
+
+      &.selected {
+        background-color: hsl(from var(--color-primary) h s l / 0.15);
+        font-weight: 500;
+      }
+
+      &:first-child {
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+
+      &:last-child {
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 24px;
+  padding-top: 24px;
+
+  @media (max-width: 1280px) {
+    max-width: calc(100% - 32px);
+  }
+}

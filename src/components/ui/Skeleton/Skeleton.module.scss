@@ -1,0 +1,29 @@
+.skeleton {
+  width: 390px;
+  height: 634px;
+  background-color: hsl(from var(--color-secondary) h s l / 0.1);
+  border-radius: 8px;
+  animation: skeleton-animation 1.5s infinite;
+
+  @media (max-width: 1280px) {
+    width: auto;
+    height: 480px;
+  }
+
+  @media (max-width: 768px) {
+    width: auto;
+    height: 300px;
+  }
+}
+
+@keyframes skeleton-animation {
+  0% {
+    background-color: hsl(from var(--color-secondary) h s l / 0.1);
+  }
+  50% {
+    background-color: hsl(from var(--color-secondary) h s l / 0.2);
+  }
+  100% {
+    background-color: hsl(from var(--color-secondary) h s l / 0.1);
+  }
+}

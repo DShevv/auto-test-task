@@ -1,0 +1,49 @@
+.button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+
+  @media (max-width: 1280px) {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  &:hover {
+    background-color: hsl(from var(--color-primary) h s l / 0.8);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+
+    &:hover {
+      background-color: var(--color-primary);
+    }
+  }
+
+  &.inline {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: none;
+    padding: 0;
+    border-radius: 0;
+
+    &:hover {
+      color: hsl(from var(--color-primary) h s l / 0.8);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: default;
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+  }
+}

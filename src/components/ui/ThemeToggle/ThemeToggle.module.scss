@@ -1,0 +1,22 @@
+.themeToggle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: hsl(from var(--color-secondary) h s l / 0.2);
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    background-color: hsl(from var(--color-secondary) h s l / 0.3);
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+    color: var(--color-primary);
+  }
+}

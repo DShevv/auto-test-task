@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+
+  .pageButton {
+    border: none;
+    color: var(--color-text-primary);
+    cursor: pointer;
+    outline: none;
+    font-size: 18px;
+
+    &:hover {
+      color: var(--color-secondary);
+    }
+
+    &:disabled {
+      text-decoration: underline;
+    }
+  }
+
+  .pages {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+}
